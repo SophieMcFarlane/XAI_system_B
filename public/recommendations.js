@@ -89,99 +89,9 @@ $(function(){
            })
        }
 
-
-
-
-        //Incase you want to put the results in a table
-        // var obj = result;
-        // for(var i=0; i<obj.length; i++){
-        //     var tr="<tr>";
-        //     var td1="<td>"+obj[i]["id"]+"</td>";
-        //     var td2="<td>"+obj[i]["title"]+"</td></tr>";
-        // }
-        // $("#place-here").append(tr+td1+td2);
-
     });
 
-    //GET Reuquest to get user ratings for explanations
-    $.get('/getRatings', function(result){
-        //Number of stars given
-        var stars = result[result.length-1]["button"].charAt(5);
-        var title = "";
-        //Group 1 Movie
-        if(result[result.length-1]["button"].charAt(1) == 1){
-            if(result[result.length-1]["button"].charAt(3) == 1){
-                title = "Blade Runner";
-            }else if(result[result.length-1]["button"].charAt(3) == 2){
-                title = "What Happened to Monday";
-            }else{
-                title = "Whiplash";
-            }
-        //Group 2 Movie
-        }else if(result[result.length-1]["button"].charAt(1) == 2){
-            if(result[result.length-1]["button"].charAt(3) == 1){
-                title = "The Circle";
-            }else if(result[result.length-1]["button"].charAt(3) == 2){
-                title = "The Bad Batch";
-            }else{
-                title = "Wish Upon";
-            }
-        //Group 3 Movie
-        }else if(result[result.length-1]["button"].charAt(1) == 3){
-            if(result[result.length-1]["button"].charAt(3) == 1){
-                title = "Baby Driver";
-            }else if(result[result.length-1]["button"].charAt(3) == 2){
-                title = "John Wick";
-            }else{
-                title = "Alien: Covenant";
-            }
-        //Group 4 Movie
-        }else if(result[result.length-1]["button"].charAt(1) == 4){
-            if(result[result.length-1]["button"].charAt(3) == 1){
-                title = "Captain Underpants: The First Epic Movie";
-            }else if(result[result.length-1]["button"].charAt(3) == 2){
-                title = "Self/less";
-            }else{
-                title = "Boyka: Undisputed IV";
-            }
-        //Group 5 Movie
-        }else if(result[result.length-1]["button"].charAt(1) == 5){
-            if(result[result.length-1]["button"].charAt(3) == 1){
-                title = "Minions";
-            }else if(result[result.length-1]["button"].charAt(3) == 2){
-                title = "Wonder Woman";
-            }else{
-                title = "Beauty and the Beast";
-            }
-        };
-
-        //Adding explanation to webpage
-        $.get('/getTable', function(result){
-            var age = "";
-            var gender = "";
-            //Getting Age and Gender of user
-            $.get('/userAgeAndGender', function(result2){
-                age = result2[0];
-                gender = result2[1];
-
-                var explanation = `- We have grouped similar movies based on budget, popularity, revenue, vote average and number of votes. ` + `</br></br> - We take into consideration the IMbD ratings depending on age and gender.` + `</br> </br> - This movie is from the group of movies we think are most suited to you as you ranked ` + title + ` with ` + stars + ` stars and ` + gender + `s in the age bracket ` + age + ` also liked this movie.` + `</br> </br> - When you say you don’t like this recommendation, we are less likely to show similar movies like it. If you like the recommendation then we are more likely to show similar movies.` + `</br></br> - We put all this information into a big table and use this information to choose which movies get recommended to you.`
-                $('#m1Explanation').html(explanation);
-                $('#m2Explanation').html(explanation);
-                $('#m3Explanation').html(explanation);
-            });
-
-           
-        })
-    })
-
 })
-
-// $(function() {
-//     $.get("/getRecommendations", function(result){
-//         console.log(result);
-//     })
-    
-// })
 
 //Buttons to see explanations for movies
 $(function(){
