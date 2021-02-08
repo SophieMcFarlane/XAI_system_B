@@ -96,7 +96,7 @@ $(function(){
 //Buttons to see explanations for movies
 $(function(){
     //Once Movie 1 button is clicked
-    $('#m1btn').click(function(){
+    $('#m1ExplanationBtn').click(function(){
         //Shows the m1Explanation div
         $('#m1Explanation').toggle(500);
         //Changes the text of the button everytime it is clicked
@@ -104,7 +104,7 @@ $(function(){
     });
 
     //Once Movie 2 button is clicked
-    $('#m2btn').click(function(){
+    $('#m2ExplanationBtn').click(function(){
         //Shows the m1Explanation div
         $('#m2Explanation').toggle(500);
         //Changes the text of the button everytime it is clicked
@@ -112,7 +112,7 @@ $(function(){
     });
 
     //Once Movie 3 button is clicked
-    $('#m3btn').click(function(){
+    $('#m3ExplanationBtn').click(function(){
         //Shows the m1Explanation div
         $('#m3Explanation').toggle(500);
         //Changes the text of the button everytime it is clicked
