@@ -279,6 +279,13 @@ app.get('/getUserBehaviour', function(req, res){
     })
 })
 
+//GET request to retrieve all user behaviour
+app.get('/getUsers', function(req, res){
+    db.all('SELECT * FROM users', (error, result) => {
+        res.send(result);
+    })
+})
+
 //POST request to log user behaviour
 app.post('/postUserBehaviour', function(req, res){
     db.run('INSERT INTO user_behaviour (userId, button, timestamp) VALUES ($userId, $button, $timestamp)', {

@@ -120,9 +120,16 @@ $(function(){
     });
 })
 
-//get Database data
+//get User Behaviour Database data
 function getUserBehaviourDatabase(){
     $.get('/getUserBehaviour', function(result){
+        console.log(result);
+    })
+}
+
+//get Users Database data
+function getUserDatabase(){
+    $.get('/getUsers', function(result){
         console.log(result);
     })
 }
