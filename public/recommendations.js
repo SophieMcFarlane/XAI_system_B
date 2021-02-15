@@ -119,3 +119,10 @@ $(function(){
         $(this).text($(this).text() == 'See Explanation' ? 'Hide Explanation' : 'See Explanation');
     });
 })
+
+//get Database data
+function getUserBehaviourDatabase(){
+    $.get('/getUserBehaviour', function(result){
+        console.log(result);
+    })
+}
