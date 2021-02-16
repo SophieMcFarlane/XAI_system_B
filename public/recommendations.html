@@ -84,9 +84,53 @@
                 <span class="align-text-top lead">Was this a <b>good</b> recommendation for you?</span>
                 <button id="m1Yes" class="btn btn-success btn-yes-no" onclick="track(this.id), sendRecommendationData(this.id)">Yes</button><button id="m1No" class="btn btn-danger btn-yes-no" onclick="track(this.id), sendRecommendationData(this.id)">No</button>
             </div>
+        </br>
             <button id=m1ExplanationBtn class="btn btn-secondary btn-explanations-odd" onclick="track(this.id)">See Explanation</button>
             <div id=m1Explanation class="explanation">
-                <image class="img-fluid" max-width="100%" height="auto" src="./images/Explanations/graphical.png"></image>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <image class="img-fluid" max-width="100%" height="auto" src="./images/movies/78.jpg"></image>
+                        </div>
+                        <div class="row">
+                            <p>Your Highest Rated</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <image class="img-fluid plus" src="./images/Explanations/plus.png"></image>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <image class="img-fluid" max-width="100%" height="auto" src="./images/movies/321612.jpg"></image>
+                        </div>
+                        <div class="row">
+                            <p>Your Lowest Rated</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <image class="img-fluid plus" src="./images/Explanations/plus.png"></image>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <image class="img-fluid gender" max-width="100%" height="auto" src="./images/Explanations/female.png"></image>
+                        </div>
+                        <div class="row">
+                            <p>Gender & Age</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <image class="img-fluid equals"  src="./images/Explanations/equals.png"></image>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <image class="img-fluid" max-width="100%" height="auto" src="./images/movies/198663.jpg"></image>
+                        </div>
+                        <div class="row">
+                            <p>Recommendation</p>
+                        </div>
+                    </div>
+                </div>
+            </br>
                 <div>
                     <span class="align-text-top lead">Do you <b>trust</b> this recommendation?</span>
                     <button id="m1Yes" class="btn btn-success btn-yes-no" onclick="track(this.id)">Yes</button><button id="m1No" class="btn btn-danger btn-yes-no" onclick="track(this.id)">No</button>

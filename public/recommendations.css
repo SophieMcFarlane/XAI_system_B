@@ -19,6 +19,25 @@
     margin-left: 5px;
 }
 
+.frame{
+    height: 160px;
+    width:160px;
+    position: relative;
+}
+
+.plus{
+    margin-left: 25px;
+    margin-top: 50px;
+}
+
+.equals{
+    margin-top: 60px;
+}
+
+.gender{
+    margin-top: 35px;
+}
+
 #getUserBehaviourDatabase{
     display: inline;
 }
