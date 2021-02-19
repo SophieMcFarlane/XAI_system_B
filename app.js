@@ -33,6 +33,7 @@ var username = "";
 var age = "";
 var gender = "";
 var highestRatedIndex = 0;
+var lowestRatedIndex = 0;
 var lastCluster = 0;
 var row = 0;
 var column = 0;
@@ -265,6 +266,41 @@ app.get('/userAgeAndGender', function(req, res){
         gender = resultUsers[0].gender;
         res.send([age, gender]);
     })
+})
+
+//GET request to get lowest rate movie cluster
+app.get('/lowestRated', function(req, res){
+   //Finding lowest rated group
+    var lowestRated = 5
+    for (var i=0; i<5; i++){
+        if(collaborativeFilteringTable[row][i] < lowestRated){
+            lowestRated = collaborativeFilteringTable[row][i];
+            lowestRatedIndex = i;
+        }
+    }
+
+    //Send the cluster that is rated lowest
+    if(lowestRatedIndex == 0){
+        db.all('SELECT * FROM cluster0_edited ORDER BY rank DESC', (error, result) => {
+            res.send(result);
+        });
+    }else if(lowestRatedIndex == 1){
+        db.all('SELECT * FROM cluster1_edited ORDER BY rank DESC', (error, result) => {
+            res.send(result);
+        });
+    }else if(lowestRatedIndex == 2){
+        db.all('SELECT * FROM cluster2_edited ORDER BY rank DESC', (error, result) => {
+            res.send(result);
+        });
+    }else if(lowestRatedIndex == 3){
+        db.all('SELECT * FROM cluster3_edited ORDER BY rank DESC', (error, result) => {
+            res.send(result);
+        });
+    }else if(lowestRatedIndex == 4){
+        db.all('SELECT * FROM cluster4_edited ORDER BY rank DESC', (error, result) => {
+            res.send(result);
+        });
+    }
 })
 
 //GET request to get collaborative filtering table
