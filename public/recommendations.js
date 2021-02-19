@@ -91,25 +91,33 @@ $(function(){
 
        //Filling in Explanation data
        document.getElementById('m1ExplanationImage').src = result[random]["imageURL"];
-       $.get('/userAgeAndGender', function(result){
-           console.log(result);
-           if(result[0] == "<18" && result[1] == "female"){
-               document.getElementById('genderAndAge').src = "./images/Explanations/female.png";
-           }else if(result[0] == "18-29" && result[1] == "female"){
+       //Getting user age and gender to fill in explanation
+       $.get('/userAgeAndGender', function(resultUser){
+           if(resultUser[0] == "<18" && resultUser[1] == "female"){
+               document.getElementById('m1GenderAndAge').src = "./images/Explanations/female.png";
+           }else if(resultUser[0] == "18-29" && resultUser[1] == "female"){
                 document.getElementById('genderAndAge').src = "./images/Explanations/female29.png"
-           }else if(result[0] == "30-44" && result[1] == "female"){
+           }else if(resultUser[0] == "30-44" && resultUser[1] == "female"){
                 document.getElementById('genderAndAge').src = "./images/Explanations/female44.png"
-           }else if(result[0] == "45+" && result[1] == "female"){
+           }else if(resultUser[0] == "45+" && resultUser[1] == "female"){
                 document.getElementById('genderAndAge').src = "./images/Explanations/female45.png"
-           }else if(result[0] == "<18" && result[1] == "male"){
+           }else if(resultUser[0] == "<18" && resultUser[1] == "male"){
                 document.getElementById('genderAndAge').src = "./images/Explanations/male18.png";
-           }else if(result[0] == "18-29" && result[1] == "male"){
+           }else if(resultUser[0] == "18-29" && resultUser[1] == "male"){
                 document.getElementById('genderAndAge').src = "./images/Explanations/male29.png"
-           }else if(result[0] == "30-44" && result[1] == "male"){
+           }else if(resultUser[0] == "30-44" && resultUser[1] == "male"){
                 document.getElementById('genderAndAge').src = "./images/Explanations/male44.png"
-           }else if(result[0] == "45+" && result[1] == "male"){
+           }else if(resultUser[0] == "45+" && resultUser[1] == "male"){
                 document.getElementById('genderAndAge').src = "./images/Explanations/male45.png"
            }
+       })
+
+       //Filling in highest rated movie group for explanation
+       document.getElementById('m1Highest').src= result[random+3]["imageURL"];
+
+       //Filling in lowest rated movie group for explanation
+       $.get('/lowestRated', function(result){
+           document.getElementById('m1Lowest').src = result[random]["imageURL"];
        })
 
     });
