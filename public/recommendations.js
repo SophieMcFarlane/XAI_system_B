@@ -89,6 +89,29 @@ $(function(){
            })
        }
 
+       //Filling in Explanation data
+       document.getElementById('m1ExplanationImage').src = result[random]["imageURL"];
+       $.get('/userAgeAndGender', function(result){
+           console.log(result);
+           if(result[0] == "<18" && result[1] == "female"){
+               document.getElementById('genderAndAge').src = "./images/Explanations/female.png";
+           }else if(result[0] == "18-29" && result[1] == "female"){
+                document.getElementById('genderAndAge').src = "./images/Explanations/female29.png"
+           }else if(result[0] == "30-44" && result[1] == "female"){
+                document.getElementById('genderAndAge').src = "./images/Explanations/female44.png"
+           }else if(result[0] == "45+" && result[1] == "female"){
+                document.getElementById('genderAndAge').src = "./images/Explanations/female45.png"
+           }else if(result[0] == "<18" && result[1] == "male"){
+                document.getElementById('genderAndAge').src = "./images/Explanations/male18.png";
+           }else if(result[0] == "18-29" && result[1] == "male"){
+                document.getElementById('genderAndAge').src = "./images/Explanations/male29.png"
+           }else if(result[0] == "30-44" && result[1] == "male"){
+                document.getElementById('genderAndAge').src = "./images/Explanations/male44.png"
+           }else if(result[0] == "45+" && result[1] == "male"){
+                document.getElementById('genderAndAge').src = "./images/Explanations/male45.png"
+           }
+       })
+
     });
 
 })
