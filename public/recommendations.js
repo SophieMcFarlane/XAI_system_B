@@ -96,19 +96,19 @@ $(function(){
            if(resultUser[0] == "<18" && resultUser[1] == "female"){
                document.getElementById('m1GenderAndAge').src = "./images/Explanations/female.png";
            }else if(resultUser[0] == "18-29" && resultUser[1] == "female"){
-                document.getElementById('genderAndAge').src = "./images/Explanations/female29.png"
+                document.getElementById('m1GenderAndAge').src = "./images/Explanations/female29.png"
            }else if(resultUser[0] == "30-44" && resultUser[1] == "female"){
-                document.getElementById('genderAndAge').src = "./images/Explanations/female44.png"
+                document.getElementById('m1GenderAndAge').src = "./images/Explanations/female44.png"
            }else if(resultUser[0] == "45+" && resultUser[1] == "female"){
-                document.getElementById('genderAndAge').src = "./images/Explanations/female45.png"
+                document.getElementById('m1GenderAndAge').src = "./images/Explanations/female45.png"
            }else if(resultUser[0] == "<18" && resultUser[1] == "male"){
-                document.getElementById('genderAndAge').src = "./images/Explanations/male18.png";
+                document.getElementById('m1GenderAndAge').src = "./images/Explanations/male18.png";
            }else if(resultUser[0] == "18-29" && resultUser[1] == "male"){
-                document.getElementById('genderAndAge').src = "./images/Explanations/male29.png"
+                document.getElementById('m1GenderAndAge').src = "./images/Explanations/male29.png"
            }else if(resultUser[0] == "30-44" && resultUser[1] == "male"){
-                document.getElementById('genderAndAge').src = "./images/Explanations/male44.png"
+                document.getElementById('m1GenderAndAge').src = "./images/Explanations/male44.png"
            }else if(resultUser[0] == "45+" && resultUser[1] == "male"){
-                document.getElementById('genderAndAge').src = "./images/Explanations/male45.png"
+                document.getElementById('m1GenderAndAge').src = "./images/Explanations/male45.png"
            }
        })
 
