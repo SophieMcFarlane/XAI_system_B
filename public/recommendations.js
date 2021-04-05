@@ -85,7 +85,7 @@ $(function(){
                 $('#m3VoteCount').html('Number of Ratings: ' + result[random]["vote_count"]);
                 $('#m3Description').html(result[random]["description"]);
                 $('#m3Image').attr("href", result[random]["imageURL"]);
-                $('#m3Explanation').html('This was chosen as we wanted to explore your preferences.');
+                //$('#m3Explanation').html('This was chosen as we wanted to explore your preferences.');
            })
        }
 
